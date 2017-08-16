@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a.borrowing-button{
+cursor:pointer;  
+padding: .5em 1em .5em 1em;
+font-style: normal;
+font-weight: bold;    
+text-align: center;
+-webkit-border-radius: .3em;
+border-radius: .3em;
+font-size: 90%;
+display: inline-block;
+margin-bottom: .6em; 
+text-decoration: none;
+color: #005c96;
+border: 1px solid #005c96;  
+}
+a#show-undergrad.button-active{
+color: #fff;
+background: #005c96;
+}  
+</style>  
+<script
+			  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+			  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+  (function($){
+    showHideMatrix=function(showType) {
+      var items = new Array ("undergrad", "grad", "law", "distance", "bridge"); // ids from beermenus.com     
+
+      for (var i in items) {
+        if (items[i].indexOf(showType) > -1){
+           $("#borrowing_matrix > #"+items[i]).addClass('matrix-active');
+           $("#borrowing_matrix > #"+items[i]).removeClass('matrix-hide');
+        }
+        else{
+           $("#borrowing_matrix > #"+items[i]).removeClass('matrix-active');
+          $("#borrowing_matrix > #"+items[i]).addClass('matrix-hide');
+        }
+      }
+    }
+
+   })($); // end load functions
+   
+    showHideMatrix("undergrad");
+
+});
+
+</script>
+
+</head>
+
+<body>
+
+<h1 class="dpu-rteElement-H1">DePaul Students</h1>
+<p class="dpu-rteElement-H1"><br/></p>
+<p class="dpu-rteElement-H1"> All DePaul students must be currently enrolled for classes to maintain the library privileges including Inter-Library Loan.</p>
+<p class="dpu-rteElement-H1">View borrowing privileges for: <br/></p>
+
+
+<p id="borrowing-student">
+  <a id="show-undergrad" class="borrowing-button button-active">Undergraduate</a>  <a id="show-grad" class="borrowing-button">Graduate</a> <a id="show-law" class="borrowing-button">Law</a> <a id="show-distance" class="borrowing-button">Distance/Online</a> <a id="show-bridge" class="borrowing-button">Summer Bridge</a> 
+</p>
+
+<!-- ######################################### -->
+<div id="borrowing_matrix">
+  
+
+<table id="student">
+<thead><tr><th>Books &amp; Other Items</th>
+<th>&#160;</th>
+<th>&#160;</th></tr></thead>
+<tbody>
+ <tr><td>Check out books</td>
+<td>Yes</td>
+<td>4 weeks</td></tr>
+ <tr><td>Check out videos and CDs</td>
+<td>Yes</td>
+<td>4 items for one week</td></tr>
+ <tr><td>Request books from I-Share Libraries</td>
+<td>Yes</td>
+<td>4 weeks (maximum 3 renewals)</td></tr>
+
+</tbody>
+<thead><tr><th>Computers &amp; Technology</th>
+<th>&#160;</th></tr></thead>
+<tbody>
+ <tr><td>Computer access</td>
+<td>Yes</td></tr>
+ <tr><td>Computer Lab access </td>
+<td>Yes</td></tr>
+ <tr><td>Off campus access to online resources</td>
+<td>Yes</td></tr>
+ <tr><td>Wireless internet access</td>
+<td>Yes</td></tr>
+
+</tbody>
+<thead><tr><th>Services</th>
+<th>&#160;</th>
+<th>&#160;</th></tr></thead>
+<tbody>
+ <tr><td>Identification required to check out materials</td>
+<td>Yes</td>
+<td>DePaul ID</td></tr>
+ <tr><td>Interlibrary loan (IShare and ILLiad)</td>
+<td>Yes</td>
+<td>&#160;</td></tr>
+ <tr><td>Renew items online or by phone</td>
+<td>Yes</td>
+<td></td></tr>
+</tbody></table>
+  
+
+<!-- ######################################### -->
+
+<table id="grad">
+<thead><tr><th>Privilege</th>
+<th>Y/N</th>
+<th>Details</th></tr></thead>
+<tbody>
+ <tr><td><strong>Books &amp; Other Items</strong></td>
+<td>&#160;</td>
+<td>&#160;</td></tr>
+ <tr><td>Check out books</td>
+<td>Yes</td>
+<td>8 weeks</td></tr>
+ <tr><td>Check out videos and CDs</td>
+<td>Yes</td>
+<td>4 items for one week</td></tr>
+ <tr><td>Request books from I-Share Libraries</td>
+<td>Yes</td>
+<td>4 weeks (maximum 3 renewals)</td></tr>
+ <tr><td><strong>Computers &amp; Technology</strong></td>
+
+<td>&#160;</td>
+<td>&#160;</td></tr>
+ <tr><td>Computer access</td>
+<td>Yes</td>
+<td>&#160;</td></tr>
+ <tr><td>Computer Lab access </td>
+<td>Yes</td>
+<td>&#160;</td></tr>
+ <tr><td>Off campus access to online resources</td>
+<td>Yes</td>
+<td>&#160;</td></tr>
+ <tr><td>Wireless internet access</td>
+<td>Yes</td>
+<td>&#160;</td></tr>
+ <tr><td><strong>Services</strong></td>
+
+<td>&#160;</td>
+<td>&#160;</td></tr>
+ <tr><td>Identification required to check out materials</td>
+<td>Yes</td>
+<td>DePaul ID</td></tr>
+ <tr><td>Interlibrary loan (IShare and ILLiad)</td>
+<td>Yes</td>
+<td>&#160;</td></tr>
+ <tr><td>Reciprocal borrowing from other institutions (OCLC)</td>
+<td>No</td>
+<td>&#160;</td></tr>
+ <tr><td>Renew items online or by phone</td>
+<td>Yes</td>
+<td></td></tr>
+</tbody></table>
+  
+</div>
+
+
+</body>
+</html>
