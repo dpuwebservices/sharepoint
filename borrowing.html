@@ -7,7 +7,9 @@
         jQuery(function(){
             $('.btn-main li').click(function() {
                 var which = $(this).index();
-                $('#borrowingDiv').find('.content').hide().eq(which).fadeIn(1300);
+                $('.btn-main li').removeClass('active');
+                $(this).addClass('active');
+                $('#borrowingDiv').find('.content').hide().eq(which).fadeIn(500);
             });
         });
     </script>
@@ -15,6 +17,7 @@
         table td {border: 1px solid gray;}
         tbody tr:nth-child(odd) {background: #e6e9ec;}
         ul li {cursor: pointer;} /* changes the cursor of the <li> to pointer when mouse over */
+        ul li.active {color:blue;} /* changes the text color to blue to indicate the list class is active */
         #borrowingDiv .content {display:none;} /* hides the div when the page loads */
     </style>
 </head>
@@ -36,7 +39,7 @@
     <div id="borrowingDiv">
 
         <!-- The content div has to have class="content", and MUST be in the same order with the <li> -->
-        <div class="content">
+        <div id="undergrad" class="content">
             <h2>Undergraduate Borrowing Privileges</h2>
             <table>
                 <tbody>
@@ -129,7 +132,7 @@
             </table>
         </div>
 
-        <div class="content">
+        <div id="grad" class="content">
             <h2>Graduate Borrowing Privileges</h2>
             <table>
                 <tbody>
@@ -228,7 +231,7 @@
 
         </div>
 
-        <div class="content">
+        <div id="law" class="content">
             <h2>Law Borrowing Privileges</h2>
             <table>
                 <tbody>
