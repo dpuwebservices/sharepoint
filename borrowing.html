@@ -3,15 +3,43 @@
 
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type='text/javascript'>
-        jQuery(function(){
-            $('.btn-main li a').click(function() {
-                var which = $(this).index();
-                $('.btn-main li a').removeClass('active');
-                $(this).addClass('active');
-                $('#borrowingDiv').find('.content').hide().eq(which).fadeIn(500);
-            });
-        });
+    <script type='text/javascript'>        
+      $(document).ready(function() {       
+        (function($){
+           getURLtag=function() {    
+         //jquery
+           $(location).attr('href');
+              return window.location.hash
+           };
+          })($);    
+          
+
+        $('.btn-main li a').click(function() {
+          var which = $(this).index();
+          $('.btn-main li a').removeClass('active');
+          $(this).addClass('active');
+          $('#borrowingDiv').find('.content').hide().eq(which).fadeIn(500);
+         });    
+         var loadHashtag=getURLtag();
+         console.log(typeof(loadHashtag));
+         if (loadHashtag===""){
+          console.log("no hash");
+          }
+         else{
+           console.log(loadHashtag);
+         }
+         
+         
+
+var children=$('#btn-main').children();
+children.each(function(index, item) {
+   console.log($(item).attr('id'));
+});
+
+
+         
+});
+  
     </script>
     <style>
         table td {border: 1px solid gray;}
@@ -28,8 +56,8 @@
     <p>View borrowing privileges for: </p>
 
     <!-- The <li> list has to be in the same order with the <div class="content">, otherwise it will NOT show the correct content when clicked -->
-    <ul class="btn-main"> 
-        <li><a href="#undergrad">Undergraduate students</a></li>
+    <ul id="btn-main"> 
+        <li><a id="aaa" href="#undergrad">Undergraduate students</a></li>
         <li><a href="#grad">Graduate students</a></li>
         <li><a href="#law">Law students</a></li>
     </ul>
