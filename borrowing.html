@@ -5,18 +5,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type='text/javascript'>
         jQuery(function(){
-            $('.btn-main li a').click(function() {
-                var which = $(this).index();
-                $('.btn-main li a').removeClass('active');
-                $(this).addClass('active');
-                $('#borrowingDiv').find('.content').hide().eq(which).fadeIn(500);
+            
+            $('.btn-main li').click(function() {
+            var which = $(this).index();
+            $('.btn-main li').removeClass('active');
+            $(this).addClass('active');
+            $('#borrowingDiv').find('.content').hide().eq(which).fadeIn(500);
             });
+            
         });
     </script>
     <style>
         table td {border: 1px solid gray;}
         tbody tr:nth-child(odd) {background: #e6e9ec;}
-        ul li a.active {color:blue;} /* changes the text color to blue to indicate the list class is active */
+        ul li.active a {color:blue;} /* changes the text color to blue to indicate the list class is active */
         #borrowingDiv .content {display:none;} /* hides the div when the page loads */
     </style>
 </head>
